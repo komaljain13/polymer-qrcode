@@ -1,0 +1,39 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<script src="../qrjs/qr.js"></script>
+<script src="../qr-code/src/qr-code.js"></script>
+<!--
+`polymer-qrcode`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="polymer-qrcode">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+        <h2>Generating QR-CODE for : [[prop1]]</h2>
+        <paper-input aria-label="Enter Data" value="{{prop1}}"></paper-input>
+        <qr-code data="{{prop1}}"></qr-code>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'polymer-qrcode',
+            properties: {
+                prop1: {
+                    type: String,
+                    value: 'Komal Jain'
+                }
+            },
+            ready: function () {
+                // do some task when component is ready.
+            }
+
+        });
+    </script>
+</dom-module>
